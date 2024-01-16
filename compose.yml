@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  fizzbuzz:
+    container_name: FizzBuzzApp
+    build:
+      context: .
+    command:
+      bash -c "set -e
+      && bash /var/www/fizzbuzz/gunicorn-docker.sh var fizzbuzz 0.0.0.0:8000
+      && /bin/bash"
+    ports:
+      - 8000:8000
+    healthcheck:
+      test: ["CMD-SHELL", "netstat -atulnp | grep :8000 || exit 1"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
