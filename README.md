@@ -62,3 +62,6 @@ https://docs.google.com/document/d/1Bj06jliuYRqfcmeV0r4YFrGHuFSLFi0SAA6ue8FX2hI/
 4.	Pytest: [link](https://docs.pytest.org/en/7.4.x/)
     - Pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.
 
+### FAQ
+1. Some might face an issue running the container up due set path for gunicorn-docker.sh file. Line no.9 > cd $PROJ_DIR.
+    - Solution: Please comment on that line and try to build again and run.
